@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            color: rgb(213, 207, 228);
+            background-color: rgba(36, 9, 155, 0.788);
+        }
+
+        h3{
+            width: fit-content;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        option{
+            text-align: center;
+        }
+
+        form{
+            display: flex;
+            flex-direction: column;
+            width: fit-content;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 2em;
+        }
+        .cards-container{
+            display: flex;
+            gap: 3em;
+            margin-left: auto;
+            margin-right: auto;
+            width: fit-content;
+        }
+
+        button, input[type=submit]{
+            color: inherit;
+            padding: 0.5em 1em;
+            background-color: rgba(24, 73, 24, 0.781);
+            border: none;
+            border-radius: 5px;
+            
+        }
+
+        button:hover, input[type=submit]:hover{
+            cursor: pointer;
+        }
+
+        input[type=number]{
+            height: fit-content;
+            margin-left:auto ;
+        }
+        .deck-container{
+            background-color: rgb(28, 25, 36);
+            display: flex;
+            margin-top: 2em;
+            margin-bottom: 2em;
+            margin-left: auto;
+            margin-right: auto;
+            width: 60%
+        }
+
+        .card-data{
+            display: flex;
+            gap: 3em;
+            text-align: center;
+            
+        }
+
+        .delete-card{
+            background-color: rgba(245, 11, 11, 0.678);
+        }
+
+        .confirm{
+            display: flex;
+            flex-direction: column;
+            gap: 0.3em;
+        }
+    </style>
+    <title>Registro de Mazo</title>
+</head>
+
+<body>
+    <div class="cards-container">
+        <select class="cards-select" name="expansion" id="">
+            <option value="-">-SELECCIONA EXPANSION-</option>
+            <!-- <option value="FUNDAMENTOS">FUNDAMENTOS</option> -->
+            <option value="PACTO SECRETO">PACTO SECRETO</option>
+            <option value="TRONO COMPARTIDO">TRONO COMPARTIDO</option>
+            <!-- <option>IMPERIO</option> -->
+        </select>
+        <select name="cards" id="">
+            <option>-SELECCIONA CARTA-</option>
+
+        </select>
+        <span class="confirm">
+
+            <button class='confirm-card to-reino'>Al reino</button>
+            <button class='confirm-card to-sidedeck'>Al sidedeck</button>
+        </span>
+
+
+    </div>
+
+    <div class="deck-container">
+        <form action="/api/decks/register" method="POST">
+            <div class="reino">
+                <h3>
+                    Tu reino actual
+                </h3>
+                <p class="cantidad-reino">Cartas : 0</p>
+            </div>
+            <div class="reino">
+                <h3>
+                    Tu sidedeck actual
+                </h3>
+                <p class="cantidad-sidedeck">Cartas : 0</p>
+            </div>
+            <div class="boveda">
+                <h3>
+                    Tu bóveda actual
+                </h3>
+                <p class="card-data">TESORO GENÉRICO x
+                    <input type="number" value="15" min=0 max=15 name="66ac24dafe29c7eac9689267">
+                </p>
+            </div>
+    
+            <input type="submit" value="Registrar Mazo">
+        </form>
+
+    </div>
+    
+    </div>
+</body>
+<script type="module" src="js/deck.js"></script>
+
+</html>

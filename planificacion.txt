@@ -1,0 +1,14 @@
+base de datos: 
+
+cartas => expansión, número, nombre-cartas (numero provisorio)
+eventos=> fecha, sede, data generales [id-general, id-mazo]
+mazo => cartas(expansion, cantidad), tribus
+general => nickname, mazos[referencias id-mazo], eventos(id, posicion en la tabla)
+
+para calcular el meta
+-necesitamos tener un top
+-sobre ese top, contabilizar para cada fecha tribus usadas
+-sobre esas tribus, contabilizar combinaciones y cartas usadas
+-sobre las combinaciones, determinar
+-sobre esas cartas, contabilizar la cantidad de cada unidad
+-para cada fecha, almacenar el meta de esa fecha
