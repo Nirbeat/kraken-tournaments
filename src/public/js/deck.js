@@ -20,7 +20,7 @@ let sacred = 0;
 let currentDeck = [];
 let currentSide = [];
 
-const cardsData = await fetch('http://kraken-tournaments.onrender.com/api/cards').then(data => data.json());
+const cardsData = await fetch('/api/cards').then(data => data.json());
 
 cardsData.sort((a,b) => a-b)
 
